@@ -298,19 +298,18 @@ public:
 // Define some NeoPatterns for the two rings 
 //  as well as some completion routines
 NeoPatterns Ring1(16, 5, NEO_GRB + NEO_KHZ800, Ring1Complete);
-NeoPatterns Ring2(16, 6, NEO_GRB + NEO_KHZ800, Ring2Complete);
+NeoPatterns Ring2(15, 6, NEO_GRB + NEO_KHZ800, Ring2Complete);
 
 bool oldState = HIGH;
-bool oldState2 = HIGH;
 int showType = 0;
 
 // Initialize everything and prepare to start
 void setup()
 {
-  Serial.begin(115200);//start serial for fast debugging using Serial.print();
+  //Serial.begin(115200);//start serial for fast debugging using Serial.print();
 
   pinMode(8, INPUT_PULLUP);//pull_up the first button
-  pinMode(9, INPUT_PULLUP);//pull_up the second button
+  //pinMode(9, INPUT_PULLUP);//pull_up the second button
 
   // Initialize all the pixelStrips
   Ring1.begin();
@@ -338,7 +337,7 @@ void loop()
       startShow(showType);
     }
   }
-   bool newState2 = digitalRead(9);//read digital 9
+  /* bool newState2 = digitalRead(9);//read digital 9
   
   // Check if state changed from high to low (button press).
   if (newState2 == LOW && oldState2 == HIGH) {
@@ -352,11 +351,11 @@ void loop()
         showType=11;
       startShow(showType);
     }
-  }
+  }*/
 
   // Set the last button state to the old state.
   oldState = newState;
-  oldState2 = newState2;
+  //oldState2 = newState2;
 }
 
 void startShow(int i) {
