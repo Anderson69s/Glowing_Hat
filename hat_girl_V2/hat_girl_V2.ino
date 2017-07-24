@@ -297,7 +297,7 @@ public:
 
 // Define some NeoPatterns for the two rings and the stick
 //  as well as some completion routines
-NeoPatterns Ring1(16, 5, NEO_GRB + NEO_KHZ800, &Ring1Complete);
+NeoPatterns Ring1(16, 5, NEO_GRB + NEO_KHZ800, Ring1Complete);
 NeoPatterns Ring2(16, 6, NEO_GRB + NEO_KHZ800, &Ring2Complete);
 
 bool oldState = HIGH;
